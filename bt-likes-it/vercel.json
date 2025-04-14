@@ -1,5 +1,8 @@
 {
+  "cleanUrls": true,
   "rewrites": [
     { "source": "/", "destination": "/index.html" }
-  ]
+  ],
+  "ignoreCommand": "echo 'skip build step'",
+  "outputDirectory": "."
 }
