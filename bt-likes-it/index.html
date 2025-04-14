@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BT Likes It</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; }
+    input { padding: 10px; font-size: 20px; }
+    button { padding: 10px 20px; font-size: 20px; margin-top: 10px; }
+    img { margin-top: 20px; max-width: 100%; }
+  </style>
+</head>
+<body>
+  <h1>Skapa din affisch</h1>
+  <input type="text" id="nameInput" placeholder="Ditt namn i versaler">
+  <br>
+  <button onclick="generate()">Skapa bild</button>
+  <div><img id="result" /></div>
+
+  <script>
+    async function generate() {
+      const name = document.getElementById("nameInput").value;
+      if (!name) return;
+      const img = document.getElementById("result");
+      img.src = "/api/generate-image?name=" + encodeURIComponent(name);
+    }
+  </script>
+</body>
+</html>
